@@ -15,6 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install appcenter-cli
+        run: |
+          brew install nodebrew
+          nodebrew setup
+          echo "export PATH=$HOME/.nodebrew/current/bin:$PATH" >> ~/.bash_profile
+          source ~/.bash_profile
+          nodebrew list
+          npm install -g appcenter-cli
+
       - name: GitHub Actions Env
         run: |
           echo CI=$CI
