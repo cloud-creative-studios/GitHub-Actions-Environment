@@ -21,7 +21,8 @@ jobs:
           nodebrew setup
           echo "export PATH=$HOME/.nodebrew/current/bin:$PATH" >> ~/.bash_profile
           source ~/.bash_profile
-          nodebrew list
+          nodebrew install-binary latest
+          nodebrew use v17.1.0
           npm install -g appcenter-cli
 
       - name: GitHub Actions Env
