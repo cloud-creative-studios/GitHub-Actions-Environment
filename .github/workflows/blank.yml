@@ -9,6 +9,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  before:
+    runs-on: self-hosted
+    if: ${{ github.token }} == ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: GitHub Token
+        run: |
+          echo ${{ github.token }} == ${{ secrets.GITHUB_TOKEN }}
+
   build:
     runs-on: self-hosted
 
@@ -56,8 +64,3 @@ jobs:
           echo github.ref = ${{ github.ref }}
           echo github.ref_name = ${{ github.ref_name }}
           echo github.repository = ${{ github.repository }}
-
-      - name: GitHub Token
-        if: ${{ github.token }} == ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo ${{ github.token }} == ${{ secrets.GITHUB_TOKEN }}
