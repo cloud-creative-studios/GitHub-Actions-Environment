@@ -9,14 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  before:
-    runs-on: self-hosted
-    if: ${{ github.token }} == ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - name: GitHub Token
-        run: |
-          echo ${{ github.token }} == ${{ secrets.GITHUB_TOKEN }}
-
   build:
     runs-on: self-hosted
 
