@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: GitHub Actions Environment (Ubuntu)
+      - name: GitHub Actions Environment
         run: |
           echo CI = $CI
           echo GITHUB_WORKFLOW = $GITHUB_WORKFLOW
@@ -63,7 +63,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: GitHub Actions Environment (Ubuntu)
+      - name: GitHub Actions Environment
         run: |
           echo CI = $CI
           echo GITHUB_WORKFLOW = $GITHUB_WORKFLOW
@@ -111,7 +111,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: GitHub Actions Environment (Ubuntu)
+      - name: GitHub Actions Environment
         run: |
           echo CI = ${{ env.CI }}
           echo GITHUB_WORKFLOW = ${{ env.GITHUB_WORKFLOW }}
