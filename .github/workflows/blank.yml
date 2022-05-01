@@ -46,4 +46,4 @@ jobs:
 
       - name: GitHub Actions Context
         run: |
-          echo github=${{ toJSON(github) }}
+          echo github='${{ toJSON(github) }}'
